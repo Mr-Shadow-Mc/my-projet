@@ -7,6 +7,9 @@ const Discord = require('discord.js'),
     fs = require('fs'),
     humanizeDuration = require('humanize-duration'),
     cooldown = new Set()
+const welcome = new Discord.MessageAttachment('./images/WELCOME.png');
+const goodbye = new Discord.MessageAttachment('./images/GOOD BYE.png');
+
 
 client.login(process.env.TOKEN)
 client.commands = new Discord.Collection()
@@ -54,18 +57,20 @@ client.on('message', message => {
 })
 
 client.on('guildMemberAdd', member => {
-    member.guild.channels.cache.get(config.greeting.channel).send(`${member}`, new Discord.MessageEmbed()
+    member.guild.channels.cache.get(config.greeting.channel).send(new Discord.MessageEmbed()
         .setTitle('```-► +1```')
-        .setDescription(`Bienvenue sur ⚘・Night Star #drama | \n on est ${member.guild.memberCount} grace a toi ! N'hesitez pas a inviter vous amis ^^`)
-        .setColor('#("fff100")'))
+        .setDescription(`${member} Bienvenue sur \`\`⚘・Night Star #drama\`\` 🌹 | \n on est ${member.guild.memberCount} grace a vous ! \`\`N'hesitez pas a inviter vous amis\`\` ^^`)
+        .setColor('#fff100"')
+        .setImage('https://zupimages.net/up/21/34/290n.png'))
     member.roles.add(config.greeting.role)
 })
 
 client.on('guildMemberRemove', member => {
     member.guild.channels.cache.get(config.greeting.channel).send(new Discord.MessageEmbed()
-        .setTitle('```-► -1```')
-        .setDescription(`Aurevoir cher compagnons | \n on est ${member.guild.memberCount} | nous esperons te revoir un jour ^^`)
-        .setColor('#fff100'))
+        .setTitle('``-► -1``')
+        .setDescription(`${member} Aurevoir cher compagnons 🌹 | \n on est ${member.guild.memberCount} | \`\`nous esperons te revoir un jour\`\` ^^`)
+        .setColor('#fff100')
+        .setImage('https://zupimages.net/up/21/34/kmg1.png'))
 })
 
 client.on('messageReactionAdd', (reaction, user) => {
