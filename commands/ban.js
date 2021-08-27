@@ -4,7 +4,7 @@ const Discord = require('discord.js'),
 module.exports = {
     run: async (message, args) => {
         if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send(new Discord.MessageEmbed()
-            .setColor("ff0000")
+            .setColor("fff100")
             .setDescription('🙅‍♂️・。Vous n\'avez pas la permission d\'utiliser cette commande.'))
         const member = message.mentions.members.first()
         if (!member) return message.channel.send(new Discord.MessageEmbed()
