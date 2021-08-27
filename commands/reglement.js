@@ -1,5 +1,5 @@
 const Discord = require('discord.js'),
-      const Img = new Discord.MessageAttachment('./images/reglement.png');
+      const Img = new Discord.MessageAttachment('./images/modcertifie-banner.png');
 
 module.exports = {
   run: message => {
