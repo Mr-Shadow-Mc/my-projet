@@ -55,7 +55,7 @@ client.on('message', message => {
 
 client.on('guildMemberAdd', member => {
     member.guild.channels.cache.get(config.greeting.channel).send(`${member}`, new Discord.MessageEmbed()
-        .setTitle('```diff\n-►+1\n```')
+        .setTitle('```-►+1```')
         .setDescription(`Bienvenue sur ⚘・Night Star #drama | \n ${member.guild.memberCount} grace a vous ! N'hesitez pas a inviter vous amis ^^`)
         .setColor('#("fff100")'))
     member.roles.add(config.greeting.role)
@@ -63,7 +63,7 @@ client.on('guildMemberAdd', member => {
 
 client.on('guildMemberRemove', member => {
     member.guild.channels.cache.get(config.greeting.channel).send(new Discord.MessageEmbed()
-        .setTitle('```diff\n-►-1\n```')
+        .setTitle('```-►-1```')
         .setDescription(`Bienvenue sur ⚘・Night Star #drama | \n ${member.guild.memberCount} grace a vous ! N'hesitez pas a inviter vous amis ^^`)
         .setColor('#fff100'))
 })
