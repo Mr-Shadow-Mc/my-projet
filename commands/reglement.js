@@ -1,4 +1,5 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js'),
+      const Img = new Discord.MessageAttachment('./images/reglement.png');
 
 module.exports = {
   run: message => {
