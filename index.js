@@ -109,7 +109,7 @@ client.on('ready', () => {
         const [bots, humans] = client.guilds.cache.first().members.cache.partition(member => member.user.bot)
         client.channels.cache.get(config.serverStats.humans).setName(`Humains : ${humans.size}`)
         client.channels.cache.get(config.serverStats.bots).setName(`🤖 Bots : ${bots.size}`)
-        client.channels.cache.get(config.serverStats.total).setName(`Total : ${client.guilds.cache.first().memberCount}`)
+        client.channels.cache.get(config.serverStats.total).setName(`Total sur le server : ${client.guilds.cache.first().memberCount}`)
     }, 3e4)
 })
 
