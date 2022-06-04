@@ -6,7 +6,7 @@ module.exports = {
     run: async (message, args, client) => {
         message.channel.send(new Discord.MessageEmbed()
         .setColor('#fff100')
-        .setDescription(`**Took ${Date.now() - message.createdTimestamp}ms**`)
+        .setDescription(`**🌐・。Took ${Date.now() - message.createdTimestamp}ms**`)
     )
     },
     name: 'ping',
