@@ -4,7 +4,10 @@ const config = require('../config.json')
 
 module.exports = {
     run: async (message, args, client) => {
-        message.channel.send(`Pong!\n**Took ${Date.now() - message.createdTimestamp}ms**`)
+        message.channel.send(new Discord.MessageEmbed()
+        .setColor('#fff100')
+        .setDescription(`**Took ${Date.now() - message.createdTimestamp}ms**`)
+    )
     },
     name: 'ping',
     guildOnly: true,
