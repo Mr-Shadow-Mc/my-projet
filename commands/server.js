@@ -7,9 +7,7 @@ module.exports = {
         message.channel.send(new Discord.MessageEmbed()
         .setColor('#fff100')
         .setDescription("Server Name :", message.guild.name,
-        "Memer Count : ", message.guild.memberCount,
-        "Member Online :", members.filter(member => member.presence.status === 'online').size 
-        )
+        "Memer Count : ", message.guild.memberCount)
         )
     },
     name: 'server',
