@@ -106,10 +106,10 @@ client.on('ready', () => {
         i = ++i % statuses.length
     }, 1e4)
     setInterval(() => {
-        const [bots, humans] = client.guilds.cache.first().members.cache.partition(member => member.user.bot)
-        client.channels.cache.get(config.serverStats.humans).setName(`Humains : ${humans.size}`)
-        client.channels.cache.get(config.serverStats.bots).setName(`🤖 Bots : ${bots.size}`)
-        client.channels.cache.get(config.serverStats.total).setName(`Total sur le server : ${client.guilds.cache.first().memberCount}`)
+        const [bots, humans] = client.guilds.members.cache;
+        client.channels.cache.get(config.serverStats.humans).setName(`Humains : ${members.filter(member => !member.user.bot).size}`)
+        client.channels.cache.get(config.serverStats.bots).setName(`🤖 Bots : ${members.filter(member => member.user.bot).size}`)
+        client.channels.cache.get(config.serverStats.total).setName(`Total sur le server : ${message.guild.memberCount}`)
     }, 3e4)
 })
 
