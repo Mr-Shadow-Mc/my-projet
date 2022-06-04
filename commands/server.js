@@ -6,8 +6,7 @@ module.exports = {
     run: async (message, args, client) => {
         message.channel.send(new Discord.MessageEmbed()
         .setColor('#fff100')
-        .setDescription("Server Name :", message.guild.name,
-        "Memer Count : ", message.guild.memberCount)
+        .setDescription(message.guild.name, message.guild.memberCount)
         )
     },
     name: 'server',
